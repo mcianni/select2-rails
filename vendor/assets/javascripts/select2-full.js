@@ -1156,6 +1156,7 @@ S2.define('select2/results',[
     });
 
     container.on('results:focus', function (params) {
+      self.trigger('focus', { data: params });
       params.element.addClass('select2-results__option--highlighted');
     });
 
@@ -2058,7 +2059,8 @@ S2.define('select2/selection/eventRelay',[
       'open', 'opening',
       'close', 'closing',
       'select', 'selecting',
-      'unselect', 'unselecting'
+      'unselect', 'unselecting',
+      'focus'
     ];
 
     var preventableEvents = ['opening', 'closing', 'selecting', 'unselecting'];
